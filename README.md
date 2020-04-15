@@ -5,7 +5,7 @@
 ### Members
 * Marco Alexi Sta Ana - msta001@ucr.edu
 * Jiacheng Hou - jhou028@ucr.edu
-* Michael
+* Chunho Wong - cwong161@ucr.edu
 
 ### Plan
 We're planning on writing a web chatroom application that allows users that go on the site to anonymously chat with the current people within it!
