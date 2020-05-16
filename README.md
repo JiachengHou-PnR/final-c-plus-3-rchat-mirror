@@ -52,8 +52,7 @@ The server receiving client's inputs and send the output back to the client side
 | Chatroom (Server) | Grab new Chat from ChatFactory |
 |  | Grab updated user number from NumberOfUsers |
 |  | Send updated Chatroom to Client |
-| NumberOfUsers | Get the users' information from Chatroom |
-|  | Send the updated number of users back to Chatroom |
+| NumberOfUsers | Send the updated number of users back to Chatroom |
 
 #### Client Side
 
