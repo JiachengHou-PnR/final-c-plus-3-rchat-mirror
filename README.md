@@ -34,3 +34,13 @@ Since the ongoing pandemic (2020) has people locked inside their houses and with
 * **Output**
   * Messages received from users
   * Pictures received from users
+
+### UML Diagrams
+
+#### Server Side
+
+![Server Side UML Diagram](/diagrams/Server_Diagram.png)
+
+#### Client Side
+
+![Client Side UML Diagram](/diagrams/Client_Diagram.png)
