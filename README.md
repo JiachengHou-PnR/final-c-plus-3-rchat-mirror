@@ -69,13 +69,13 @@ The client side gets input from the user, send the chat message to the server an
 | ChatContainer | Contains Chat classes |
 |  | Send Chat Class to the server side |
 | interface Chat | Abstract class the holds texts and username |
-|  | Has two children |
+|  | Has two children: Text, Emoji |
 | Text | Inherent class from Chat |
 |  | Add basic text messages |
 | Emoji | Inherent class from Chat |
 |  | Add emoji messages |
 | ChatDecorator | Abstract class that add features to Chat |
-|  | Has two children |
+|  | Has two children: Color, GetEmoji|
 | Color | Inherent class from ChatDecorator |
 |  | Modifies Chat message color |
 | GetEmoji | Inherent class from ChatDecorator |
