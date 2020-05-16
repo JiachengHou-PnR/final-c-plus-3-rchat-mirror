@@ -66,8 +66,9 @@ The client side gets input from the user, send the chat message to the server an
 |          | Get ChatContainer from server side |
 |  | Display it to the user |
 | ChatContainer | Contains Chat classes |
-|  | Send Chat Class to the server side |
-| interface Chat | Abstract class the holds texts and username |
+|  | Send Chat lass to the server side |
+|  | Send Chat class to Chatroom (Client) |
+| Chat | Abstract class the holds texts and username |
 |  | Has two children: Text, Emoji |
 | Text | Inherent class from Chat |
 |  | Add basic text messages |
