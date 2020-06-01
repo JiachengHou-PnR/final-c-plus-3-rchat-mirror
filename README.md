@@ -8,6 +8,9 @@
 * Jiacheng Hou - jhou028@ucr.edu
 * Chunho Wong - cwong161@ucr.edu
 
+### Live App Link
+https://chatr--box.herokuapp.com/
+
 ### Plan
 
 We're planning on writing a web chatroom application that allows users that go on the site to anonymously chat with the current people within it!
