@@ -8,8 +8,11 @@
 * Jiacheng Hou - jhou028@ucr.edu
 * Chunho Wong - cwong161@ucr.edu
 
-### Live App Link
+### Main Live App Link
 https://chatr--box.herokuapp.com/
+
+### Current Testing Link
+https://rchat-test.herokuapp.com/
 
 ### Plan
 
