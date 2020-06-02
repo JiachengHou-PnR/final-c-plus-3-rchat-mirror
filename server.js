@@ -50,7 +50,7 @@ io.on('connection', (socket) => {
             userName: socket.username,
             message: msg
         });
-        console.log('message: ' + msg);
+        console.log(socket.username + 'says: ' + msg);
     })
 })
 
