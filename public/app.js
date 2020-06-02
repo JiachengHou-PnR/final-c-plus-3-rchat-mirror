@@ -38,12 +38,12 @@ $(document).ready(function () {
         var username = prompt("Please enter a username", "Harry Potter");
 
         if (username != null) {
-            socket.emit('sent message', $('username').val());
+            socket.emit('sent username', $('username').val());
             $('username').val('');
         }
 
-        socket.on('sent message', function (e) {
-            let addChatBubble = '<div class="chatBubble send"><p class="chatMsg">' + e + '</p></div>'
+        socket.on('sent username', function (e) {
+            let addChatBubble = '<div class="chatBubble send"><p class="chatMsg">' + username + '</p></div>'
 
             $('#userList').append(addChatBubble);
             window.scrollTo(0, document.body.scrollHeight);
