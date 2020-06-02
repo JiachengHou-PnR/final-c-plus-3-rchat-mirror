@@ -49,8 +49,19 @@ $(document).ready(function () {
                 option = receive;
             }
             
-            let addChatBubble;
+            //let addChatBubble;
             addChatBubble(data.message, option);
+            /*
+            if (data.message != tempMsg) {
+                addChatBubble = '<div class="chatBubble receive"><p class="chatMsg">' + data.message + '</p></div>';
+            }
+            else {
+                addChatBubble = '<div class="chatBubble send"><p class="chatMsg">' + data.message + '</p></div>';
+            }
+
+            $('#inputLogs').append(addChatBubble);
+            window.scrollTo(0, document.body.scrollHeight);
+            */
         });
     }
 
