@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
             });
             */
             socket.username = username;
-            console.log(username + " loged in.");
+            console.log(socket.username + " loged in.");
         }
         
         //addedUser = true;
