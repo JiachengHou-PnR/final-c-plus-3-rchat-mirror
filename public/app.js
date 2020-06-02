@@ -32,7 +32,7 @@ $(document).ready(function () {
     }
 
     EmitMessage();
-
+/*
     function GetUsername() {
         var socket = io();
         let username = prompt("Please enter a username", "Harry Potter");
@@ -51,5 +51,5 @@ $(document).ready(function () {
     }
 
     GetUsername();
-
+*/
 })

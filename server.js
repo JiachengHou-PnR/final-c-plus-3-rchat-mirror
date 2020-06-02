@@ -22,8 +22,7 @@ io.on('connection', function(socket){
     console.log('Host Id Connected: ', socket.id);
     let tempId = socket.id;
 
-
-
+/*
     socket.on('set username', function(usr) {
         console.log(usr);
         console.log(tempId + ' username: ' + usr);
@@ -35,7 +34,7 @@ io.on('connection', function(socket){
             socket.emit('userSet', {username: usr});
          }
     })
-
+*/
 
     socket.on('disconnect', (e) => {
         console.log('Host Id Disconnected: ', tempId);
