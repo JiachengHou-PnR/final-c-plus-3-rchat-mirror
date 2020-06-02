@@ -20,7 +20,8 @@ $(document).ready(function () {
 
         socket.on('sent message', (data) => {
             let addChatName;
-            addChatName = '<div class="chatName receive"><p class="chatMsg">' + data.message + '</p></div>';
+            addChatName = '<div class="chatName"><p>' + data.userName + '</p></div>';
+            $('#inputLogs').append(addChatName);
             
             let addChatBubble;
             if (data.message != tempMsg) {
@@ -34,8 +35,6 @@ $(document).ready(function () {
             window.scrollTo(0, document.body.scrollHeight);
         });
     }
-
-    EmitMessage();
 
     function setUsername() {
         var socket = io();
@@ -57,6 +56,6 @@ $(document).ready(function () {
 
 
 
-
+    EmitMessage()
     setUsername();
 })
