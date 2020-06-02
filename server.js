@@ -31,19 +31,15 @@ io.on('connection', (socket) => {
             //socket.emit('userExists', username + ' username is taken! Try some other username.');
         } else {
             users.push(username);
-            /*
-            socket.emit('login', {
-                numUsers: numUsers
-            });
-            */
             socket.username = username;
             console.log(socket.username + " loged in.");
+            socket.emit('loged in', {
+                userName: socket.username,
+                numUsers: users.length
+            });
         }
         
-        //addedUser = true;
         /*
-        
-        
         // echo globally (all clients) that a person has connected
         socket.broadcast.emit('user joined', {
         username: socket.username,
@@ -53,7 +49,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', (e) => {
-        console.log('Host Id Disconnected: ', tempId);
+        console.log('Host Id Disconnected: ' + tempId);
     })
 });
 

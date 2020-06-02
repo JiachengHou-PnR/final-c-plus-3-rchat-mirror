@@ -42,7 +42,15 @@ $(document).ready(function () {
           // Tell the server your username
           socket.emit('add user', username);
         }
-      }
+
+        socket.on('loged in', (data) => {
+            let addChatBubble;
+            addChatBubble = '<div class="chatBubble send"><p class="chatMsg">' + "Welcome " + data.userName + '</p></div>'
+            $('#inputLogs').append(addChatBubble);
+        });
+    }
+
+
 
     setUsername();
 })
