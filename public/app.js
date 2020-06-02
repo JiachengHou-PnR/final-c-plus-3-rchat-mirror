@@ -34,9 +34,10 @@ $(document).ready(function () {
         });
 
         socket.on('sent message', (data) => {
-            let addChatName;
-            addChatName = '<div class="chatName"><p>' + data.userName + '</p></div>';
-            $('#inputLogs').append(addChatName);
+            if (data.userName != username) {
+                let addChatName = '<div class="chatName"><p>' + data.userName + '</p></div>';
+                $('#inputLogs').append(addChatName);
+            }
             
             let addChatBubble;
             if (data.message != tempMsg) {
