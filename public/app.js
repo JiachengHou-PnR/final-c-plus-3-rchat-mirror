@@ -43,10 +43,10 @@ $(document).ready(function () {
             if (data.userName != username) {
                 let addChatName = '<div class="chatName"><p>' + data.userName + '</p></div>';
                 $('#inputLogs').append(addChatName);
-                option = 'send';
+                option = 'receive';
             }
             else {
-                option = 'receive';
+                option = 'send';
             }
             
             addChatBubble(data.message, option);
