@@ -19,6 +19,7 @@ body{
     height: 100%;
     color: whitesmoke;
     position: relative;
+    margin-bottom: 50%;
 }
 
 .chatBubble{
@@ -48,7 +49,7 @@ body{
     font-size: 10px;
     padding: 1% 1% 1% 1%;
     width: 20%;
-    text-align: right;
+    text-align: left;
 }
 
 #inputForm{
