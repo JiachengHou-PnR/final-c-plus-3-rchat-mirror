@@ -44,6 +44,13 @@ body{
     float: left;
 }
 
+.chatUsername{
+    font-size: 10px;
+    padding: 1% 1% 1% 1%;
+    width: 20%;
+    text-align: center;
+}
+
 #inputForm{
     width: 100%;
     background-color: none;
