@@ -22,6 +22,7 @@ users = [];
 
 io.on('connection', function(socket) {
     console.log('Host Id Connected: ', socket.id);
+    socket.username ="guest";
 
     socket.on('add user', (username) => {
         //if (addedUser) return;
@@ -41,11 +42,12 @@ io.on('connection', function(socket) {
     });
 
     socket.on('sent message', function(msg) {
+        console.log(socket.username + ' says: ' + msg);
+
         io.emit('sent message', {
             userName: socket.username,
             message: msg
         });
-        console.log(socket.username + 'says: ' + msg);
     });
 })
 
