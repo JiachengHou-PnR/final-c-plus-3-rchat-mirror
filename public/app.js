@@ -39,21 +39,18 @@ $(document).ready(function () {
         });
 
         socket.on('sent message', (data) => {
+            let option;
             if (data.userName != username) {
                 let addChatName = '<div class="chatName"><p>' + data.userName + '</p></div>';
                 $('#inputLogs').append(addChatName);
+                option = send;
+            }
+            else {
+                option = receive;
             }
             
             let addChatBubble;
-            if (data.message != tempMsg) {
-                addChatBubble = '<div class="chatBubble receive"><p class="chatMsg">' + data.message + '</p></div>';
-            }
-            else {
-                addChatBubble = '<div class="chatBubble send"><p class="chatMsg">' + data.message + '</p></div>';
-            }
-
-            $('#inputLogs').append(addChatBubble);
-            window.scrollTo(0, document.body.scrollHeight);
+            addChatBubble(data.message, option);
         });
     }
 
