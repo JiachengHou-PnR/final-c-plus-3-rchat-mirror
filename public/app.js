@@ -35,7 +35,7 @@ $(document).ready(function () {
 
     function GetUsername() {
         var socket = io();
-        var username = prompt("Please enter a username", "Harry Potter");
+        let username = prompt("Please enter a username", "Harry Potter");
 
         if (username != null) {
             socket.emit('sent username', $('username').val());
