@@ -25,16 +25,15 @@ io.on('connection', function(socket) {
     socket.username ="guest";
 
     socket.on('add user', function(username) {
-        //if (addedUser) return;
-        console.log(socket.id + ' username: ' + username);
+        if (username) {
+            console.log(socket.id + ' requested username: ' + username);
+            socket.username = username;
 
-        // we store the username in the socket session for this client
-        socket.username = username;
-
-        console.log(socket.username + " loged in.");
-        socket.emit('loged in', {
-            userName: socket.username
-        });
+            console.log(socket.username + " loged in.");
+            socket.emit('loged in', {
+                userName: socket.username
+            });
+        }
     });
 
     socket.on('disconnect', (e) => {
