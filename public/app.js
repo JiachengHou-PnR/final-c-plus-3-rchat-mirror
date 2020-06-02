@@ -32,24 +32,17 @@ $(document).ready(function () {
     }
 
     EmitMessage();
-/*
-    function GetUsername() {
+
+    function setUsername() {
         var socket = io();
         let username = prompt("Please enter a username", "Harry Potter");
-
-        if (username != null) {
-            socket.emit('sent username', $('username').val());
-            $('username').val('');
+    
+        // If the username is valid
+        if (username) {
+          // Tell the server your username
+          socket.emit('add user', username);
         }
+      }
 
-        socket.on('sent username', function (e) {
-            let addChatBubble = '<div class="chatBubble send"><p class="chatMsg">' + username + '</p></div>'
-
-            $('#userList').append(addChatBubble);
-            window.scrollTo(0, document.body.scrollHeight);
-        });
-    }
-
-    GetUsername();
-*/
+    setUsername();
 })
