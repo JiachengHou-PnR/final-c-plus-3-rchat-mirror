@@ -13,8 +13,6 @@ let server = app.listen(PORT, function(){
     console.log('Server started!!');
 })
 
-//let io = socket(server);
-
 // Setup basic express server
 const path = require('path');
 //var server = require('http').createServer(app);
@@ -22,34 +20,27 @@ var io = require('socket.io')(server);
 
 users = [];
 
-io.on('connection', (socket) => {
+io.on('connection', function(socket) {
     console.log('Host Id Connected: ', socket.id);
-    let tempId = socket.id;
 
     socket.on('add user', (username) => {
         //if (addedUser) return;
-        console.log(tempId + ' username: ' + username);
+        console.log(socket.id + ' username: ' + username);
 
         // we store the username in the socket session for this client
-        if (users.indexOf(username) > -1) {
-            //socket.emit('userExists', username + ' username is taken! Try some other username.');
-        } else {
-            users.push(username);
-            socket.username = username;
-            console.log(socket.username + " loged in.");
-            socket.emit('loged in', {
-                userName: socket.username,
-                numUsers: users.length
-            });
-        }
+        socket.username = username;
+
+        console.log(socket.username + " loged in.");
+        socket.emit('loged in', {
+            userName: socket.username
+        });
     });
 
     socket.on('disconnect', (e) => {
-        console.log('Host Id Disconnected: ' + tempId);
+        console.log('Host Id Disconnected: ' + socket.id);
     });
 
-
-    socket.on('sent message', (msg) => {
+    socket.on('sent message', function(msg) {
         io.emit('sent message', {
             userName: socket.username,
             message: msg
