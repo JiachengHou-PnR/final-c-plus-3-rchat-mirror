@@ -47,7 +47,7 @@ io.on('connection', (socket) => {
 
     socket.on('sent message', (msg) => {
         io.emit('sent message', {
-            userName = socket.username,
+            userName: socket.username,
             message: msg
         });
         console.log('message: ' + msg);
