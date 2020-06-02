@@ -6,9 +6,14 @@ $(document).ready(function () {
         let tempMsg;
 
         $('form').submit(function () {
-            socket.emit('sent message', $('#msgForm').val());
             tempMsg = $('#msgForm').val();
-            $('#msgForm').val('');
+            if (tempMsg == "") {
+                alert("Message cannot be empty.");
+            }
+            else {
+                socket.emit('sent message', $('#msgForm').val());
+                $('#msgForm').val('');
+            }
             return false;
         });
 
