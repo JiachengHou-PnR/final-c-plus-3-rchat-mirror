@@ -1,9 +1,24 @@
 $(document).ready(function () {
     var username;
+    var socket = io();
+
+    function setUsername() {
+        username = prompt("Please enter a username", "Harry Potter");
+    
+        // If the username is valid
+        if (username) {
+          // Tell the server your username
+          socket.emit('add user', username);
+        }
+
+        socket.on('loged in', (data) => {
+            let addChatBubble;
+            addChatBubble = '<div class="chatBubble send"><p class="chatMsg">' + "Welcome " + data.userName + '</p></div>'
+            $('#inputLogs').append(addChatBubble);
+        });
+    }
 
     function EmitMessage() {
-
-        var socket = io();
         let tempMsg;
 
         $('form').submit(function () {
@@ -36,26 +51,7 @@ $(document).ready(function () {
         });
     }
 
-    function setUsername() {
-        var socket = io();
-        username = prompt("Please enter a username", "Harry Potter");
-    
-        // If the username is valid
-        if (username) {
-          // Tell the server your username
-          socket.emit('add user', username);
-        }
-
-        socket.on('loged in', (data) => {
-            let addChatBubble;
-            addChatBubble = '<div class="chatBubble send"><p class="chatMsg">' + "Welcome " + data.userName + '</p></div>'
-            $('#inputLogs').append(addChatBubble);
-        });
-    }
-
-
-
-
-    EmitMessage()
     setUsername();
+    EmitMessage();
+
 })

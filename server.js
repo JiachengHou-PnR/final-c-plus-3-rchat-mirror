@@ -24,7 +24,7 @@ io.on('connection', function(socket) {
     console.log('Host Id Connected: ', socket.id);
     socket.username ="guest";
 
-    socket.on('add user', (username) => {
+    socket.on('add user', function(username) {
         //if (addedUser) return;
         console.log(socket.id + ' username: ' + username);
 
