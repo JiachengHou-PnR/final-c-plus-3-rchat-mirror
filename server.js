@@ -1,7 +1,6 @@
 const PORT = process.env.PORT || 8080;
-
 const express = require('express');
-const socket = require('socket.io');
+//const socket = require('socket.io');
 const app = express();
 
 app.use(express.static('public'))
@@ -14,7 +13,21 @@ let server = app.listen(PORT, function(){
     console.log('Server started!!');
 })
 
-let io = socket(server);
+//let io = socket(server);
+
+// Setup basic express server
+const path = require('path');
+//var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+
+
+
+server.listen(port, () => {
+  console.log('Server listening at port %d', port);
+});
+
+// Routing
+app.use(express.static(path.join(__dirname, 'public')));
 
 users = [];
 
@@ -42,7 +55,7 @@ io.on('connection', (socket) => {
 
     socket.on('disconnect', (e) => {
         console.log('Host Id Disconnected: ' + tempId);
-    })
+    });
 
 
     socket.on('sent message', (msg) => {
@@ -51,6 +64,6 @@ io.on('connection', (socket) => {
             message: msg
         });
         console.log(socket.username + 'says: ' + msg);
-    })
+    });
 })
 
