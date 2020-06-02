@@ -21,6 +21,11 @@ io.on('connection', function(socket){
     console.log('Host Id Connected: ', socket.id);
     let tempId = socket.id;
 
+    socket.on('sent username', (usr) => {
+        io.emit('sent username', usr)
+        console.log(tempId + ' username: ' + usr);
+    })
+
     socket.on('disconnect', (e) => {
         console.log('Host Id Disconnected: ', tempId);
     })
