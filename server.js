@@ -38,23 +38,13 @@ io.on('connection', (socket) => {
                 numUsers: users.length
             });
         }
-        
-        /*
-        // echo globally (all clients) that a person has connected
-        socket.broadcast.emit('user joined', {
-        username: socket.username,
-        numUsers: numUsers
-        });
-        */
     });
 
     socket.on('disconnect', (e) => {
         console.log('Host Id Disconnected: ' + tempId);
     })
-});
 
 
-io.on('connection', function(socket) {
     socket.on('sent message', (msg) => {
         io.emit('sent message', {
             userName = socket.username,
