@@ -12,9 +12,14 @@ $(document).ready(function () {
         }
 
         socket.on('loged in', (data) => {
+            let text = 'Welcome ' + data.userName;
+            addChatBubble(text, 'send');
+            /*
             let addChatBubble;
             addChatBubble = '<div class="chatBubble send"><p class="chatMsg">' + "Welcome " + data.userName + '</p></div>'
             $('#inputLogs').append(addChatBubble);
+            window.scrollTo(0, document.body.scrollHeight);
+            */
         });
     }
 
@@ -50,6 +55,12 @@ $(document).ready(function () {
             $('#inputLogs').append(addChatBubble);
             window.scrollTo(0, document.body.scrollHeight);
         });
+    }
+
+    function addChatBubble(text, option) {
+        let chatBubble = '<div class="chatBubble ' + option + '"><p class="chatMsg">' + text + '</p></div>';
+        $('#inputLogs').append(chatBubble);
+        window.scrollTo(0, document.body.scrollHeight);
     }
 
     setUsername();
